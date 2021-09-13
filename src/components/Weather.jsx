@@ -1,4 +1,19 @@
-const Weather = () => {
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
+const apiKey = '7ddb92e5512e18d5ec7db71cfcd3c628';
+
+const Weather = ({state}) => {
+     const [weather, setWeather] = useState(null)
+     const city = state;
+     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+     useEffect(() => {
+          axios.get(url).then((response) => {
+               setWeather(response.data)
+          })
+     }, [url]);
+     if (!weather) return null;
+     const { name, main: { temp }, weather: [{main}] } = weather
      return (
           <div className='flex flex-col justify-between h-full pt-8 pb-20 ml-8'>
                <h1 className='text-sm tracking-widest text-gray-200'>
@@ -6,10 +21,10 @@ const Weather = () => {
                </h1>
                <div className='flex items-end justify-center'>
                     <h1 className='text-6xl font-semibold tracking-wide transform'>
-                         61°c
+                         {`${Math.floor(temp - 273.15)}°c`}
                     </h1>
                     <h3 className='flex flex-col items-center justify-center mx-4 text-3xl'>
-                         London{' '}
+                         {name}
                          <span className='mt-1 text-xs font-thin tracking-wide text-gray-300'>
                               06:23 - Monday, 9 sep '21
                          </span>
@@ -74,10 +89,11 @@ const Weather = () => {
                               </svg>
                          </i>
                          <p className='text-xs text-gray-200 font-thin tracking-wide'>
-                              Cloudy
+                              {main}
                          </p>
                     </div>
                </div>
+               {console.log()}
           </div>
      );
 };
