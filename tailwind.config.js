@@ -1,9 +1,13 @@
 module.exports = {
-     mode: 'jit',
+     // mode: 'jit',
      purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
      darkMode: false, // or 'media' or 'class'
      theme: {
-          extend: {},
+          extend: {
+               backgroundImage: {
+                    'hero-pattern': "url('/src/images/warm.jpg')",
+               },
+          },
      },
      variants: {
           extend: {},
