@@ -1,19 +1,11 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 
-const apiKey = '7ddb92e5512e18d5ec7db71cfcd3c628';
 
-const Weather = ({state}) => {
-     const [weather, setWeather] = useState(null)
-     const city = state;
-     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-     useEffect(() => {
-          axios.get(url).then((response) => {
-               setWeather(response.data)
-          })
-     }, [url]);
-     if (!weather) return null;
-     const { name, main: { temp }, weather: [{main}] } = weather
+const Weather = ({ weather }) => {
+     const {
+          name,
+          main: { temp },
+          weather: [{ main }],
+     } = weather;
      return (
           <div className='flex flex-col justify-between h-full pt-8 pb-20 ml-8'>
                <h1 className='text-sm tracking-widest text-gray-200'>

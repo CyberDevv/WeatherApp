@@ -8,7 +8,7 @@ const Input = ({ value, stateFunction }) => {
                     type='text'
                     name='search'
                     placeholder='Search Location'
-                    className='w-full px-4 py-3 text-gray-200 bg-transparent border-b-2 focus:outline-none border-opacity-70 '
+                    className='w-full px-4 py-3 tracking-wide text-gray-200 bg-transparent border-b-2 focus:outline-none border-opacity-70 '
                     onChange={(e) => {
                          countryVariable = e.target.value;
                     }}
