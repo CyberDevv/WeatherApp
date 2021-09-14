@@ -1,3 +1,5 @@
+import { currentMonth, currentDay, yearr, todaydate } from './Date';
+
 const Weather = ({ weather }) => {
      const {
           name,
@@ -20,9 +22,10 @@ const Weather = ({ weather }) => {
                     <h3 className='flex flex-col items-center justify-center mx-4 text-3xl'>
                          {/* Country */}
                          {name}
-                         {/* Date */}
+                         {/* Date -- Do not how I got my date, as long as it works ... */}
                          <span className='mt-1 text-xs font-thin tracking-wide text-gray-300'>
-                              06:23 - Monday, 9 sep '21
+                              {`06:23 - ${currentDay}, ${todaydate} ${currentMonth} '${yearr}`}
+                              {/* {currentMonth} */}
                          </span>
                     </h3>
                     <div className='flex flex-col items-center justify-center'>
