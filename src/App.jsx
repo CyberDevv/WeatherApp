@@ -15,10 +15,23 @@ const App = () => {
           });
      }, [url]);
      if (!weather) return null;
-     const {weather: [{main}]} = weather
+     const {
+          weather: [{ main }],
+     } = weather;
 
      return (
-          <div className={`${main === 'Rain' ? "bg-rainy" : 'bg-sunny'} w-full h-screen bg-no-repeat bg-cover`}>
+          <div
+               className={`bg-default ${
+                    main === 'Thunderstorm' && 'bg-thunderstorm'
+               } ${main === 'Drizzle' && 'bg-drizzle'} ${
+                    main === 'Rain' && 'bg-rainy'
+               } ${main === 'Snow' && 'bg-snowy'} ${
+                    main === 'Clear' && 'bg-clear'
+               } ${main === 'Haze' && 'bg-haze'} ${
+                    main === 'Clouds' && 'bg-clouds'
+               } w-full h-screen bg-no-repeat bg-cover transition-all duration-300
+                `}
+          >
                <div className='w-full h-full bg-black bg-opacity-40'>
                     <div className='flex justify-between w-full h-full'>
                          <Weather country={country} weather={weather} />

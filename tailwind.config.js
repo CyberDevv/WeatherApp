@@ -5,8 +5,14 @@ module.exports = {
      theme: {
           extend: {
                backgroundImage: {
-                    'sunny': "url('/src/images/warm.jpg')",
-                    'rainy': "url('/src/images/rain.jpg')",
+                    default: "url('/src/images/default.jpg')",
+                    clear: "url('/src/images/clear.jpg') !important",
+                    rainy: "url('/src/images/rain2.jpg') !important",
+                    snowy: "url('/src/images/snow.jpg') !important",
+                    haze: "url('/src/images/haze.jpg') !important",
+                    thunderstorm: "url('/src/images/thunderstorm.jpg') !important",
+                    drizzle: "url('/src/images/drizzle.jpg') !important",
+                    clouds: "url('/src/images/clouds.jpg') !important",
                },
           },
      },
