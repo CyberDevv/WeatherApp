@@ -1,6 +1,7 @@
+import {FaAlignRight} from 'react-icons/fa'
 import { currentMonth, currentDay, yearr, todaydate } from './Date';
 
-const Weather = ({ weather }) => {
+const Weather = ({ weather, isOpened, setIsOpened }) => {
      const {
           name,
           main: { temp },
@@ -8,11 +9,14 @@ const Weather = ({ weather }) => {
      } = weather;
      const iconSVG = `http://openweathermap.org/img/wn/${icon}@2x.png`;
      return (
-          <div className='flex flex-col justify-between h-full pt-8 pb-20 ml-8'>
-               {/* ANCHOR Logo */}
-               <h1 className='text-sm tracking-widest text-gray-200'>
-                    WeatherApp
-               </h1>
+          <div className='flex flex-col justify-between h-full pt-8 pb-20 mx-4 md:ml-8'>
+               <div className='flex justify-between items-center'>
+                    {/* ANCHOR Logo */}
+                    <h1 className='text-sm tracking-widest text-gray-200'>
+                         WeatherApp
+                    </h1>
+                    <FaAlignRight className='text-xl' onClick= {() => setIsOpened(!isOpened)} />
+               </div>
 
                <div className='flex items-end justify-center'>
                     {/* ANCHOR weather Temperature */}

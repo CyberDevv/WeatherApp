@@ -1,4 +1,4 @@
-const countries = ['Birmingham', 'Manchester', 'New York', 'California'];
+const countries = ['Birmingham', 'Spain', 'New York', 'California'];
 
 const QuickClickCountry = ({ stateFunction }) => {
      return (

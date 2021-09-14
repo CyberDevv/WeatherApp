@@ -8,6 +8,7 @@ const apiKey = '7ddb92e5512e18d5ec7db71cfcd3c628';
 const App = () => {
      const [weather, setWeather] = useState(null);
      const [country, setCountry] = useState('Nigeria');
+     const [isOpened, setIsOpened] = useState(false);
      const url = `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${apiKey}`;
      useEffect(() => {
           axios.get(url).then((response) => {
@@ -33,13 +34,26 @@ const App = () => {
                 `}
           >
                <div className='w-full h-full bg-black bg-opacity-40'>
-                    <div className='flex justify-between w-full h-full'>
-                         <Weather country={country} weather={weather} />
-                         <SideBar
+                    <div className='md:flex md:justify-between w-full h-full'>
+                         <Weather
                               country={country}
-                              stateFunction={setCountry}
                               weather={weather}
+                              isOpened={isOpened}
+                              setIsOpened={setIsOpened}
                          />
+                         <div
+                              className={`${
+                                   isOpened
+                                        ? ' transform translate-x-0 h-screen '
+                                        : ' transform -translate-x-full '
+                              } md:block transition-all duration-300  top-0 left-0 absolute`}
+                         >
+                              <SideBar
+                                   country={country}
+                                   stateFunction={setCountry}
+                                   weather={weather}
+                              />
+                         </div>
                     </div>
                </div>
           </div>

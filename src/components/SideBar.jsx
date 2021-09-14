@@ -4,7 +4,7 @@ import WeatherDetails from './WeatherDetails';
 
 const SideBar = ({ state, stateFunction, weather }) => {
      return (
-          <div className='z-10 w-2/5 glassmorphism'>
+          <div className='z-10 md:w-2/5 h-full glassmorphism'>
                <Input value={state} stateFunction={stateFunction} />
                <div className='px-4 py-8 space-y-6 border-b-2'>
                     <QuickClickCountry
@@ -12,7 +12,7 @@ const SideBar = ({ state, stateFunction, weather }) => {
                          stateFunction={stateFunction}
                     />
                </div>
-               <WeatherDetails weather= {weather} />
+               <WeatherDetails weather={weather} />
           </div>
      );
 };
