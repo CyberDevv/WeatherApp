@@ -10,7 +10,7 @@ const Weather = ({ weather, isOpened, setIsOpened }) => {
      const iconSVG = `http://openweathermap.org/img/wn/${icon}@2x.png`;
      return (
           <div className='flex flex-col justify-between h-full pt-8 pb-20 mx-4 md:ml-8'>
-               <div className='flex justify-between items-center'>
+               <div className='flex items-center justify-between'>
                     {/* ANCHOR Logo */}
                     <h1 className='text-sm tracking-widest text-gray-200'>
                          WeatherApp
