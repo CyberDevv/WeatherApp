@@ -34,7 +34,7 @@ const App = () => {
                 `}
           >
                <div className='w-full h-full bg-black bg-opacity-40'>
-                    <div className='w-full h-full md:flex md:justify-between'>
+                    <div className='w-full h-full md:flex md:justify-between '>
                          <Weather
                               country={country}
                               weather={weather}
@@ -44,9 +44,9 @@ const App = () => {
                          <div
                               className={`${
                                    isOpened
-                                        ? ' transform translate-x-0 h-screen '
-                                        : ' transform -translate-x-full '
-                              } md:block transition-all duration-300  top-0 left-0 absolute`}
+                                        ? ' transform w-4/5 md:w-full translate-x-0 h-screen md:transform-none'
+                                        : ' transform -translate-x-full md:transform-none'
+                              } md:block transition-all duration-300 top-0 left-0 absolute md:relative`}
                          >
                               <SideBar
                                    country={country}

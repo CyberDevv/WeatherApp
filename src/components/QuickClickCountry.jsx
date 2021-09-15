@@ -5,7 +5,7 @@ const QuickClickCountry = ({ stateFunction }) => {
           <>
                {countries.map((country, index) => [
                     <button key= {index}
-                         className='w-full font-thin tracking-wide text-left text-gray-300'
+                         className='w-full font-thin tracking-wide text-left text-gray-300 hover:text-gray-50 transition-colors duration-300'
                          onClick={(e) => {
                               //  countryVariable = e.target;
                               const countryVariable = e.target.outerText;

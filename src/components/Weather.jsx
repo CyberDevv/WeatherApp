@@ -15,35 +15,40 @@ const Weather = ({ weather, isOpened, setIsOpened }) => {
                     <h1 className='text-sm tracking-widest text-gray-200'>
                          WeatherApp
                     </h1>
-                    <FaAlignRight className='text-xl' onClick= {() => setIsOpened(!isOpened)} />
+                    <FaAlignRight
+                         className='text-xl md:hidden cursor-pointer'
+                         onClick={() => setIsOpened(!isOpened)}
+                    />
                </div>
 
-               <div className='flex items-end justify-center'>
+               <div className='flex flex-col md:flex-row md:items-end md:justify-start'>
                     {/* ANCHOR weather Temperature */}
-                    <h1 className='text-6xl font-semibold tracking-wide transform'>
+                    <h1 className='font-semibold tracking-wide transform text-7xl md:text-6xl'>
                          {`${Math.floor(temp - 273.15)}°c`}
                     </h1>
-                    <h3 className='flex flex-col items-center justify-center mx-4 text-3xl'>
-                         {/* Country */}
-                         {name}
-                         {/* Date -- Do not how I got my date, as long as it works ... */}
-                         <span className='mt-1 text-xs font-thin tracking-wide text-gray-300'>
-                              {`06:23 - ${currentDay}, ${todaydate} ${currentMonth} '${yearr}`}
-                              {/* {currentMonth} */}
-                         </span>
-                    </h3>
-                    <div className='flex flex-col items-center justify-center'>
-                         {/* weather icon */}
-                         <img
-                              src={iconSVG}
-                              alt=''
-                              className='w-20 h-20 fill-current'
-                         />
+                    <div className='flex items-end justify-start space-x-4 md:mx-4'>
+                         <h3 className='flex flex-col items-start justify-center text-3xl'>
+                              {/* Country */}
+                              {name}
+                              {/* Date -- Do not how I got my date, as long as it works ... */}
+                              <span className='mt-1 text-xs font-thin tracking-wide text-gray-300'>
+                                   {`06:23 - ${currentDay}, ${todaydate} ${currentMonth} '${yearr}`}
+                                   {/* {currentMonth} */}
+                              </span>
+                         </h3>
+                         <div className='flex flex-col items-center justify-center'>
+                              {/* weather icon */}
+                              <img
+                                   src={iconSVG}
+                                   alt=''
+                                   className='w-16 h-16 md:w-20 md:h-20 fill-current'
+                              />
 
-                         {/* Weather */}
-                         <p className='text-xs font-thin tracking-wide text-gray-200'>
-                              {main}
-                         </p>
+                              {/* Weather */}
+                              <p className='text-xs font-thin tracking-wide text-gray-200'>
+                                   {main}
+                              </p>
+                         </div>
                     </div>
                </div>
           </div>
