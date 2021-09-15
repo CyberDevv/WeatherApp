@@ -34,7 +34,7 @@ const App = () => {
                 `}
           >
                <div className='w-full h-full bg-black bg-opacity-40'>
-                    <div className='md:flex md:justify-between w-full h-full'>
+                    <div className='w-full h-full md:flex md:justify-between'>
                          <Weather
                               country={country}
                               weather={weather}
