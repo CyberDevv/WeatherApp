@@ -2,14 +2,15 @@ import Input from './Input';
 import QuickClickCountry from './QuickClickCountry';
 import WeatherDetails from './WeatherDetails';
 
-const SideBar = ({ state, stateFunction, weather }) => {
+const SideBar = ({ state, stateFunction, weather, setIsLoading }) => {
      return (
           <div className='z-10 h-full glassmorphism'>
-               <Input value={state} stateFunction={stateFunction} />
+               <Input value={state} stateFunction={stateFunction} setIsLoading={setIsLoading} />
                <div className='px-4 py-8 space-y-6 border-b-2'>
                     <QuickClickCountry
                          value={state}
                          stateFunction={stateFunction}
+                         setIsLoading={setIsLoading}
                     />
                </div>
                <WeatherDetails weather={weather} />

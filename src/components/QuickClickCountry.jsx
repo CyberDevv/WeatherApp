@@ -1,15 +1,17 @@
 const countries = ['Birmingham', 'Spain', 'New York', 'California'];
 
-const QuickClickCountry = ({ stateFunction }) => {
+const QuickClickCountry = ({ stateFunction, setIsLoading }) => {
      return (
           <>
                {countries.map((country, index) => [
-                    <button key= {index}
+                    <button
+                         key={index}
                          className='w-full font-thin tracking-wide text-left text-gray-300 hover:text-gray-50 transition-colors duration-300'
                          onClick={(e) => {
                               //  countryVariable = e.target;
                               const countryVariable = e.target.outerText;
                               stateFunction(countryVariable);
+                              setIsLoading(false)
                          }}
                     >
                          {country}

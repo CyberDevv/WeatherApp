@@ -1,6 +1,6 @@
 import { BiSearch } from 'react-icons/bi';
 
-const Input = ({ value, stateFunction }) => {
+const Input = ({ value, stateFunction, setIsLoading }) => {
      let countryVariable = value;
      return (
           <div className='flex items-end justify-center'>
@@ -15,12 +15,14 @@ const Input = ({ value, stateFunction }) => {
                     onKeyDown={(e) => {
                          if (e.key === 'Enter') {
                               stateFunction(countryVariable);
+                              setIsLoading(false);
                          }
                     }}
                />
                <button
                     type='submit'
                     onClick={() => {
+                         setIsLoading(false);
                          stateFunction(countryVariable);
                     }}
                     className='p-4 transition-colors bg-pink-600 hover:bg-pink-800'

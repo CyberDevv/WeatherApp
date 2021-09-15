@@ -1,12 +1,14 @@
 const date = new Date();
 
-const month = date.getMonth();
 const day = date.getDay();
+const month = date.getMonth();
 const year = date.getFullYear();
+let stringYear = year.toString();
 
-export let currentMonth = '';
-export let currentDay = '';
 export const todaydate = date.getDate();
+export let currentDay = '';
+export let currentMonth = '';
+export const yearr = stringYear[2] + stringYear[3];
 
 switch (month) {
      case 0:
@@ -74,6 +76,3 @@ switch (day) {
      default:
           break;
 }
-
-let stringYear = year.toString();
-export const yearr = stringYear[2] + stringYear[3];
