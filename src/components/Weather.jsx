@@ -17,7 +17,7 @@ const Weather = ({ weather, isOpened, setIsOpened }) => {
           weather: [{ main, icon }],
      } = weather;
 
-     const iconSVG = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+     const iconSVG = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
      return (
           <div className='flex flex-col justify-between h-full pt-8 pb-20 mx-4 md:ml-8'>
