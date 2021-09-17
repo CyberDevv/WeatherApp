@@ -1,6 +1,6 @@
 import { BiSearch } from 'react-icons/bi';
 
-const Input = ({ value, stateFunction, setIsLoading, setIsOpened, isOpened, }) => {
+const Input = ({ value, stateFunction, setIsLoading, setIsOpened }) => {
      let countryVariable = value;
      return (
           <div className='flex items-end justify-center'>
@@ -16,7 +16,7 @@ const Input = ({ value, stateFunction, setIsLoading, setIsOpened, isOpened, }) =
                          if (e.key === 'Enter') {
                               stateFunction(countryVariable);
                               setIsLoading(false);
-                              setIsOpened(!isOpened);
+                              setIsOpened(false);
                          }
                     }}
                />
@@ -25,7 +25,7 @@ const Input = ({ value, stateFunction, setIsLoading, setIsOpened, isOpened, }) =
                     onClick={() => {
                          stateFunction(countryVariable);
                          setIsLoading(false);
-                         setIsOpened(!isOpened);
+                         setIsOpened(false);
                     }}
                     className='p-4 transition-colors bg-pink-600 hover:bg-pink-800'
                >

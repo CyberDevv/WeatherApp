@@ -8,7 +8,6 @@ const SideBar = ({
      weather,
      setIsLoading,
      setIsOpened,
-     isOpened,
 }) => {
      return (
           <div className='z-10 h-full glassmorphism'>
@@ -17,7 +16,6 @@ const SideBar = ({
                     stateFunction={stateFunction}
                     setIsLoading={setIsLoading}
                     setIsOpened={setIsOpened}
-                    isOpened={isOpened}
                />
                <div className='px-4 py-8 space-y-6 border-b-2'>
                     <QuickClickCountry
@@ -25,7 +23,6 @@ const SideBar = ({
                          stateFunction={stateFunction}
                          setIsLoading={setIsLoading}
                          setIsOpened={setIsOpened}
-                         isOpened={isOpened}
                     />
                </div>
                <WeatherDetails weather={weather} />

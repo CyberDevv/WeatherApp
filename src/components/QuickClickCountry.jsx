@@ -3,8 +3,7 @@ const countries = ['Birmingham', 'Spain', 'New York', 'California'];
 const QuickClickCountry = ({
      stateFunction,
      setIsLoading,
-     setIsOpened,
-     isOpened,
+     setIsOpened
 }) => {
      return (
           <>
@@ -16,11 +15,11 @@ const QuickClickCountry = ({
                               const countryVariable = e.target.outerText;
                               stateFunction(countryVariable);
                               setIsLoading(false);
-                              setIsOpened(!isOpened);
+                              setIsOpened(false);
                          }}
                     >
                          {country}
-                    </button>,
+                    </button>
                ])}
           </>
      );

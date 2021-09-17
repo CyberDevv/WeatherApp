@@ -67,7 +67,6 @@ const App = () => {
                                         weather={weather}
                                         setIsLoading={setIsLoading}
                                         setIsOpened={setIsOpened}
-                                        isOpened={isOpened}
                                    />
                               </div>
                          </div>
