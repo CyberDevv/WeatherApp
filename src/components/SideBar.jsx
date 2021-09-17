@@ -16,6 +16,8 @@ const SideBar = ({
                     value={state}
                     stateFunction={stateFunction}
                     setIsLoading={setIsLoading}
+                    setIsOpened={setIsOpened}
+                    isOpened={isOpened}
                />
                <div className='px-4 py-8 space-y-6 border-b-2'>
                     <QuickClickCountry
