@@ -8,17 +8,26 @@ const apiKey = '7ddb92e5512e18d5ec7db71cfcd3c628';
 
 const App = () => {
      const [weather, setWeather] = useState(null);
+     const [error, setError] = useState(null);
      const [country, setCountry] = useState('Nigeria');
      const [isOpened, setIsOpened] = useState(false);
      const [isLoading, setIsLoading] = useState(false);
      const url = `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${apiKey}`;
      useEffect(() => {
-          axios.get(url).then((response) => {
-               setWeather(response.data);
-               setIsLoading(true);
-          });
+          axios.get(url)
+               .then((response) => {
+                    setWeather(response.data);
+                    setIsLoading(true);
+               })
+               .catch((error) => {
+                    setError(error);
+               });
      }, [url]);
+     if (error) {
+          return <App />;
+     }
      if (!weather) return null;
+
      const {
           weather: [{ main }],
      } = weather;
